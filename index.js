@@ -102,6 +102,8 @@ app.post("/register", async (req, res) => {
 app.post("/editmembers", async (req, res) => {
   const data = req.body.data;
 
+  console.log(data);
+
   if (
     data.fullname &&
     data.age &&
@@ -126,7 +128,7 @@ app.post("/editmembers", async (req, res) => {
       return null;
     }
   } else {
-    res.status(400).json({ error: "an error has occured; insuffieceint data" });
+    res.status(404).json({ error: "an error has occured; insuffieceint data" });
     return null;
   }
 });

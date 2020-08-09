@@ -21,7 +21,7 @@ const client = require("./dbconfig");
 
 const membersGET = async () => {
   try {
-    const queryString = "SELECT * FROM MEMBERS";
+    const queryString = "SELECT * FROM MEMBERS ORDER BY MEMBERID";
     const res = await client.query(queryString);
     // await client.end();
     const data = res.rows;
